@@ -9,14 +9,19 @@ public class CalcolaBiglietto {
 		
 		int kilometriDaPercorrere;
 		int et‡Passeggero;
+		double costoTratta;
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.print("Inserisci la tua Et‡: ");
 		et‡Passeggero = scan.nextInt();
 		System.out.print("Inserisci i kilometri che vuoi percorrere: ");
 		kilometriDaPercorrere = scan.nextInt();
+		costoTratta = kilometriDaPercorrere * 0.21;
+		System.out.print("Il costo della tratta scelta Ë di: " + costoTratta + "Ä");
 
+		
 		scan.close();
+		
 	}
 
 }
