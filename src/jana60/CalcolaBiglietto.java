@@ -11,7 +11,9 @@ public class CalcolaBiglietto {
 		int kilometriDaPercorrere;
 		int etaPasseggero;
 		double costoTratta;
-
+		double prezzoAlKilometro = 0.21;
+		double scontoMinorenni = 20;
+		double scontoAnziani = 40;
 		Scanner scan = new Scanner(System.in);
 
 		// Inizio immissione dati
@@ -21,19 +23,20 @@ public class CalcolaBiglietto {
 		kilometriDaPercorrere = scan.nextInt();
 
 		// Inizio calcolo costo kilometri
-		costoTratta = kilometriDaPercorrere * 0.21;
+		costoTratta = kilometriDaPercorrere * prezzoAlKilometro;
 		System.out.println("Il costo della tratta scelta è di: " + costoTratta + "€");
 
 		// Inizio calcolo sconto
 		double prezzoScontato = costoTratta;
 
 		// Inizio sequenza per identificazione sconto
+		
 		if (etaPasseggero < 18) {
-			prezzoScontato = costoTratta - costoTratta / 100 * 20;
+			prezzoScontato = costoTratta - costoTratta / 100 * scontoMinorenni;
 			System.out.println("Complimenti hai diritto ad un sconto del 20%, prezzo finale: ");
 
 		} else if (etaPasseggero > 65) {
-			prezzoScontato = costoTratta - costoTratta / 100 * 40;
+			prezzoScontato = costoTratta - costoTratta / 100 * scontoAnziani;
 			System.out.println("Complimenti hai diritto ad un sconto del 40%, prezzo finale: ");
 
 		} else {
